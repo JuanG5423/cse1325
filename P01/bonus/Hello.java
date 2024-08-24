@@ -1,8 +1,12 @@
+import java.utl.Scanner;
 
 public class Hello
 {
 	public static void main(String[] args)
 	{
-		System.out.println("hello, Juan");
+		Scanner in = new Scanner(System.in);	
+		System.out.print("Enter your name: ");
+		String name = in.next();
+		System.out.println("hello, " + name);
 	}
 }
