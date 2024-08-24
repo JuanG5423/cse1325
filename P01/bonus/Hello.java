@@ -1,4 +1,4 @@
-import java.utl.Scanner;
+import java.util.Scanner;
 
 public class Hello
 {
