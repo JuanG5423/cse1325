@@ -11,7 +11,7 @@ public class Coin
 
 	public double getValue()
 	{
-		double value;
+		double value = 0;
 		switch(denomination)
 		{
 			case PENNY:
