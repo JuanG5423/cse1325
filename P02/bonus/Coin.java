@@ -23,4 +23,5 @@ public class Coin
 	public String toString()
 	{
 		return year + " " + denomination;
+	}
 }
