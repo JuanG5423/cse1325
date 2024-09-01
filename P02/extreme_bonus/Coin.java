@@ -36,6 +36,28 @@ public class Coin
 		{
 			return 5.0;
 		}
+		else if (denomination.toString().equals("dime"))
+		{
+			if (year <= 1965)
+			{
+				return 2.5;
+			}
+			else
+			{
+				return 2.268;
+			}
+		}
+		else
+		{
+			if (year <= 1965)
+			{
+				return 6.25;
+			}
+			else
+			{
+				return 5.67;
+			}
+		}
 	}
 
 	@Override
