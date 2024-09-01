@@ -16,14 +16,16 @@ public class Coin
 		{
 			case PENNY:
 				value = 0.01;
+				break;
 			case NICKEL:
 				value = 0.05;
+				break;
 			case DIME:
 				value = 0.1;
+				break;
 			case QUARTER:
 				value = 0.25;
-			default:
-				System.err.println("Something ain't right here");
+				break;
 		}
 		return value;
 	}
