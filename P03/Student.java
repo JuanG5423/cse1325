@@ -28,6 +28,6 @@ public class Student
 	@Override
 	public String toString()
 	{
-		return name + "(" + id + ", " + email + ", " + account.getAccountNumber() + ")";
+		return name + " (" + id + ", " + email + ", " + "Account #" + account.getAccountNumber() + ")";
 	}
 }
