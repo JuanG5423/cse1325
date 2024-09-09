@@ -7,19 +7,27 @@ public class Student
 
 	public Student(String name, int id, String email)
 	{
-		this.name = name;
-		this.id = id;
-		this.email = email;
+		if (!(email.endsWith("@uta.edu") || email.endsWith("@mavs.uta.edu")))
+		{
+			throw new IllegalArgumentException("Non-UTA email address: " + email);
+		}
+		else
+		{
+			this.name = name;
+			this.id = id;
+			this.email = email;
+			this.account = new Account();
+		}
 	}
 
 	public String requestMedia(Media media)
 	{
-		continue;
+		return account.play();
 	}
 
 	@Override
 	public String toString()
 	{
-		return name;
+		return name + "(" + id + ", " + email + ", " + account.getAccountNumber() + ")";
 	}
 }
