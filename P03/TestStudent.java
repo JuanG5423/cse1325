@@ -17,6 +17,20 @@ public class TestStudent
 			System.err.println("FAIL: Expected output is Playing The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0) but returned " + student.requestMedia(new Media("The Little Shop of Horrors", "https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0")));
 			System.exit(69);
 		}	
+
+		//TEST VECTOR #3: Non-UTA email address
+		try
+		{
+			Student student2 = new Student("Invalid Email", 7777777, "bidibidibombom@utd.edu");
+			System.err.println("FAIL: Non-UTA email address (bidibidibombom@utd.edu) but no exception thrown");
+		}
+		catch (IllegalArgumentException e)
+		{
+		}
+		catch (Exception e)
+		{
+			System.err.println("FAIL: Student threw wrong exception on Non-UTA email address");
+		}
 	}
 }
 
