@@ -22,7 +22,7 @@ public class Student
 
 	public String requestMedia(Media media)
 	{
-		return account.play();
+		return account.play(media);
 	}
 
 	@Override

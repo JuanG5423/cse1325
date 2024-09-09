@@ -2,8 +2,8 @@ public class TestAccount
 {
 	public static void main(String[] args)
 	{
-		Account firstAccount = new(Account());
-		Account secondAccount = new(Account());
+		Account firstAccount = new Account();
+		Account secondAccount = new Account();
 
 		if (firstAccount.getAccountNumber() != 1)
 		{
