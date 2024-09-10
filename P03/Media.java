@@ -23,7 +23,7 @@ public class Media
 		}
 	       	catch (Exception e) 
 		{
-		    throw new IllegalArgumentException("Invalid URL");
+		    throw new IllegalArgumentException("Invalid URL : " + url);
 		}
 	}
 
