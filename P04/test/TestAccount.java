@@ -1,4 +1,5 @@
 package test;
+import customer.Account;
 
 public class TestAccount
 {

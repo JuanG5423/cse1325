@@ -1,4 +1,6 @@
 package test;
+import customer.Student;
+import product.Media;
 
 public class TestStudent
 {

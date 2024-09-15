@@ -1,4 +1,5 @@
 package customer;
+import product.Media;
 
 public class Student
 {
