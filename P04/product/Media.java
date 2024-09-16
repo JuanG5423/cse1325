@@ -51,7 +51,7 @@ public class Media
 	 *
 	 * Gets the number of points needed to play a Media instance.
 	 *
-	 * @return points: int representing the points needed to play the Media instance	
+	 * @return points - int representing the points needed to play the Media instance	
 	 * @since 0.2
 	 */
 
@@ -64,13 +64,13 @@ public class Media
 	 *
 	 * Returns a String representation of the Media instance.
 	 *
-	 * @return title + " (" + url + ") " + points: a String representing the Media instance in the format [title] ("[url]") [points]
+	 * @return title + " (" + url + ", " + points + " points)" - String representing the Media instance in the format [title] ("[url]", [points])
 	 * @since 0.1
 	 */
 
 	@Override
 	public String toString()
 	{
-		return title + " (" + url + ") " + points;
+		return title + " (" + url + ", " + points + " points)";
 	}
 }
