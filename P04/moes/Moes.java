@@ -6,15 +6,37 @@ import customer.Account;
 import customer.Unlimited;
 import customer.Alacarte;
 
+/**
+ * Maverick Online Entertainment System, a class for managing students and media
+ *
+ * @author	Juan Guajardo Gutierrez
+ * @version	0.1
+ * @since	0.1
+ */
+
 public class Moes
 {
 	private ArrayList<Media> library = new ArrayList<Media>();
 	private ArrayList<Student> customers = new ArrayList<Student>();
 
+	/**
+	 * Adds a piece of media to the library
+	 *
+	 * @param media	A Media instance
+	 * @since 0.1
+	 */
+
 	public void addMedia(Media media)
 	{
 		library.add(media);
 	}
+
+	/**
+	 * Retrieves a list of all the media in the library
+	 *
+	 * @return A string in a menu format. Each line is in the format [mediaIndex]) [media]
+	 * @since 0.1
+	 */
 
 	public String getMediaList()
 	{
@@ -28,10 +50,24 @@ public class Moes
 		return sb.toString();
 	}
 
+	/**
+	 * Adds a student to the list of customers
+	 *
+	 * @param student A Student instance
+	 * @since 0.1
+	 */
+
 	public void addStudent(Student student)
 	{
 		customers.add(student);
 	}
+
+	/**
+	 * Retrieves a list of all the students
+	 *
+	 * @return A string in a menu format. Each line is in the format [studentIndex]) [student]
+	 * @since 0.1
+	 */
 
 	public String getStudentList()
 	{
@@ -45,6 +81,14 @@ public class Moes
 
 		return sb.toString();
 	}
+
+	/**
+	 * Retrieves the number of points a student holds
+	 *
+	 * @param studentIndex	An int holding the index of a student in the customer list
+	 * @return The number of points in the student's account if they have an Alacarte account. Integer.MAX_VALUE if the student has an Unlimited account.
+	 * @since 0.1
+	 */
 
 	public int getPoints(int studentIndex)
 	{
@@ -65,6 +109,15 @@ public class Moes
 		}
 	}
 
+	/**
+	 * Adds points to a student's account
+	 *
+	 * @param studentIndex An int holding the index of a student in the customer list
+	 * @param points An int with the number of points to be bought
+	 * @return A message indicating how many points the student has after the purchase if they hold an Alacarte account. Returns a message indicating that the student doesn't need additional points if they hold an Unlimited account.
+	 * @since 0.1
+	 */
+
 	public String buyPoints(int studentIndex, int points)
 	{
 		Account account = customers.get(studentIndex).getAccount();
@@ -84,6 +137,15 @@ public class Moes
 			throw new UnsupportedOperationException("Unknown subclass of Account");
 		}
 	}
+
+	/**
+	 * Plays a student's media
+	 *
+	 * @param studentIndex An int holding the index of a student in the customer list
+	 * @param mediaIndex An int holding the index of a media in the library list
+	 * @return A message indicating that the media is being played
+	 * @since 0.1
+	 */
 
 	public String playMedia(int studentIndex, int mediaIndex)
 	{
