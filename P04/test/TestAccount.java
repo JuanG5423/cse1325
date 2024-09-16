@@ -1,12 +1,14 @@
 package test;
 import customer.Account;
+import customer.Unlimited;
+import customer.Alacarte;
 
 public class TestAccount
 {
 	public static void main(String[] args)
 	{
-		Account firstAccount = new Account();
-		Account secondAccount = new Account();
+		Account firstAccount = new Unlimited();
+		Account secondAccount = new Alacarte();
 
 		if (firstAccount.getAccountNumber() != 1)
 		{
