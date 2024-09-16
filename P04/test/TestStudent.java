@@ -52,7 +52,7 @@ public class TestStudent
 			errors++;
 		}
 
-		//TEST VECTOR #5: Student.requestMedia(media) with Alacarte account with sufficient points
+		//TEST VECTOR #5: Student.requestMedia(media) with Alacarte account with insufficient points
 		Student alacarteStudent = new Student("Alacarte Student", 1234, "alacarte@mavs.uta.edu", false);
 		Alacarte alacarteAccount = new Alacarte();
 		Alacarte alacarteStudentAccount = (Alacarte) alacarteStudent.getAccount();
@@ -61,6 +61,17 @@ public class TestStudent
 		if (!(alacarteStudent.requestMedia(testMedia).equals("Buy more points: Requires 999 points, you have 998") && alacarteAccount.play(testMedia).equals("Buy more points: Requires 999 points, you have 998")))
 		{
 			System.err.println("FAIL: Student.requestMedia() and Account.play() should both return Buy more points: Requires 999 points, you have 998 but Student.requestMedia() returned " + alacarteStudent.requestMedia(testMedia) + " and Account.play() returned " + alacarteAccount.play(testMedia));
+			errors++;
+		}
+
+		//TEST VECTOR #6: Student.requestMedia(media) with Alacarte account with sufficient points
+		alacarteStudentAccount.buyPoints(1);
+		alacarteAccount.buyPoints(1);
+		String studentRequestMedia = alacarteStudent.requestMedia(testMedia);
+		String alacartePlay = alacarteAccount.play(testMedia);
+		if (!(studentRequestMedia.equals("Playing Out of Ideas (https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego), 999 points)") && alacartePlay.equals("Playing Out of Ideas (https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego), 999 points)")))
+		{
+			System.err.println("FAIL: Student.requestMedia() and Account.play() should both return Playing Out of Ideas (https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego), 999 points) but Student.requestMedia() returned " + studentRequestMedia + " and Account.play() returned " + alacartePlay);
 			errors++;
 		}
 
