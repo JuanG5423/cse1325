@@ -38,6 +38,14 @@ public class TestMoes
 			errors++;
 		}	
 
+		//TEST VECTOR #4: Buying points for Unlimited account
+		result = moes.buyPoints(0, 2147483647);
+		if (!(result.equals("Unlimited Limited (7777, unlimited@mavs.uta.edu, Account #1) has unlimited account and needs no points!")))
+		{
+			System.err.println("FAIL: Buying points for an Unlimited account should output Unlimited Limited (7777, unlimited@mavs.uta.edu, Account #1) has unlimited account and needs no points! but received " + result);
+			errors++;
+		}
+
 
 		System.exit(errors);
 	}
