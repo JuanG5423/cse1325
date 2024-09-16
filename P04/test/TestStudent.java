@@ -1,6 +1,9 @@
 package test;
 import customer.Student;
 import product.Media;
+import customer.Account;
+import customer.Unlimited;
+import customer.Alacarte;
 
 public class TestStudent
 {
@@ -36,6 +39,28 @@ public class TestStudent
 		catch (Exception e)
 		{
 			System.err.println("FAIL: Student threw wrong exception on Non-UTA email address");
+			errors++;
+		}
+
+		//TEST VECTOR #4: Student.requestMedia(media) with Unlimited account
+		Student unlimitedStudent = new Student("Unlimited Limited", 7777, "unlimited@uta.edu", true);
+		Media testMedia = new Media("Out of Ideas", "https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego)", 999);
+		Unlimited unlimitedAccount = new Unlimited();
+		if (!(unlimitedStudent.requestMedia(testMedia).equals("Playing Out of Ideas (https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego), 999 points)") && unlimitedAccount.play(testMedia).equals("Playing Out of Ideas (https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego), 999 points)")))
+		{
+			System.err.println("FAIL: Student.requestMedia() and Account.play() should both	return Playing Out of Ideas (https://www.last.fm/music/Kali+Uchis/_/Tirano+(feat.+Fuego), 999 points) but Student.requestMedia() returned " + unlimitedStudent.requestMedia(testMedia) + " and Account.play() returned " + unlimitedAccount.play(testMedia));
+			errors++;
+		}
+
+		//TEST VECTOR #5: Student.requestMedia(media) with Alacarte account with sufficient points
+		Student alacarteStudent = new Student("Alacarte Student", 1234, "alacarte@mavs.uta.edu", false);
+		Alacarte alacarteAccount = new Alacarte();
+		Alacarte alacarteStudentAccount = (Alacarte) alacarteStudent.getAccount();
+		alacarteStudentAccount.buyPoints(998);
+		alacarteAccount.buyPoints(998);
+		if (!(alacarteStudent.requestMedia(testMedia).equals("Buy more points: Requires 999 points, you have 998") && alacarteAccount.play(testMedia).equals("Buy more points: Requires 999 points, you have 998")))
+		{
+			System.err.println("FAIL: Student.requestMedia() and Account.play() should both return Buy more points: Requires 999 points, you have 998 but Student.requestMedia() returned " + alacarteStudent.requestMedia(testMedia) + " and Account.play() returned " + alacarteAccount.play(testMedia));
 			errors++;
 		}
 
