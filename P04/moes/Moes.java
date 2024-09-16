@@ -8,8 +8,8 @@ import customer.Alacarte;
 
 public class Moes
 {
-	private ArrayList<Media> library;
-	private ArrayList<Student> customers;
+	private ArrayList<Media> library = new ArrayList<Media>();
+	private ArrayList<Student> customers = new ArrayList<Student>();
 
 	public void addMedia(Media media)
 	{
