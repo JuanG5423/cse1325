@@ -6,11 +6,28 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.time.Duration;
 
+/**
+ * Represents a piece of media with its title and URL.
+ *
+ * @author	Juan Guajardo Gutierrez
+ * @version	0.2
+ * @since	0.1
+ */
+
 public class Media
 {
 	private String title;
 	private String url;
 	private int points;
+	
+	/**
+	 * Creates a Media instance.
+	 *
+	 * @param title		String containing the title of the Media instance.
+	 * @param url		String containing the URL of the Media instance.
+	 * @param points	int representing the points needed to play the Media instance.
+	 * @since 0.1
+	 */
 
 	public Media(String title, String url, int points)
 	{
@@ -30,10 +47,26 @@ public class Media
 		}
 	}
 
+	/**
+	 *
+	 * Gets the number of points needed to play a Media instance.
+	 *
+	 * @return points: int representing the points needed to play the Media instance	
+	 * @since 0.2
+	 */
+
 	public int getPoints()
 	{
 		return points;
 	}
+
+	/**
+	 *
+	 * Returns a String representation of the Media instance.
+	 *
+	 * @return title + " (" + url + ") " + points: a String representing the Media instance in the format [title] ("[url]") [points]
+	 * @since 0.1
+	 */
 
 	@Override
 	public String toString()
