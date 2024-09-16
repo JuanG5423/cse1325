@@ -22,6 +22,7 @@ public class Media
 		    HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 		    this.title = title;
 		    this.url = url;
+		    this.points = points;
 		}
 	       	catch (Exception e) 
 		{
