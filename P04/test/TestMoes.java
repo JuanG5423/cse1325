@@ -46,6 +46,13 @@ public class TestMoes
 			errors++;
 		}
 
+		//TEST VECTOR #5: getPoints for Alacarte account
+		if (0+50 != moes.getPoints(1))
+		{
+			System.err.println("FAIL: Alacarte account that had 0 points and bought 50 points should have 50 points but has " + moes.getPoints(1) + " points");
+			errors++;
+		}
+
 
 		System.exit(errors);
 	}
