@@ -29,7 +29,7 @@ public class Media
 		}
 	}
 
-	int getPoints()
+	public int getPoints()
 	{
 		return points;
 	}
