@@ -17,9 +17,9 @@ public class TestStudent
 		}
 
 		//TEST VECTOR #2: Student.requestMedia(media)
-		if (!(student.requestMedia(new Media("The Little Shop of Horrors", "https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0", 4)).equals("Playing The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0) 4")))
+		if (!(student.requestMedia(new Media("The Little Shop of Horrors", "https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0", 4)).equals("Playing The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0, 4 points)")))
 		{
-			System.err.println("FAIL: Expected output is Playing The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0) 4 but returned " + student.requestMedia(new Media("The Little Shop of Horrors", "https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0", 20)));
+			System.err.println("FAIL: Expected output is Playing The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0, 4 points)but returned " + student.requestMedia(new Media("The Little Shop of Horrors", "https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0", 4)));
 			errors++;
 		}	
 
