@@ -6,7 +6,7 @@ public class TestStudent
 {
 	public static void main(String[] args)
 	{
-		Student student = new Student("Juan Guajardo Gutierrez", 1002128662, "jgg8662@mavs.uta.edu");
+		Student student = new Student("Juan Guajardo Gutierrez", 1002128662, "jgg8662@mavs.uta.edu", true);
 		int errors = 0;
 
 		//TEST VECTOR #1: Student.toString()
@@ -26,7 +26,7 @@ public class TestStudent
 		//TEST VECTOR #3: Non-UTA email address
 		try
 		{
-			Student student2 = new Student("Invalid Email", 7777777, "bidibidibombom@utd.edu");
+			Student student2 = new Student("Invalid Email", 7777777, "bidibidibombom@utd.edu", false);
 			System.err.println("FAIL: Non-UTA email address (bidibidibombom@utd.edu) but no exception thrown");
 			errors++;
 		}
