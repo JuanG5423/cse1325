@@ -10,8 +10,9 @@ public class Media
 {
 	private String title;
 	private String url;
+	private int points;
 
-	public Media(String title, String url)
+	public Media(String title, String url, int points)
 	{
 		
 		try 
@@ -28,9 +29,14 @@ public class Media
 		}
 	}
 
+	int getPoints()
+	{
+		return points;
+	}
+
 	@Override
 	public String toString()
 	{
-		return title + " (" + url + ")";
+		return title + " (" + url + ") " + points;
 	}
 }
