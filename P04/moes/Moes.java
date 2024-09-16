@@ -8,7 +8,6 @@ import customer.Alacarte;
 
 /**
  * Maverick Online Entertainment System, a class for managing students and media
- *
  * @author	Juan Guajardo Gutierrez
  * @version	0.1
  * @since	0.1

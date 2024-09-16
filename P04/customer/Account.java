@@ -37,6 +37,8 @@ public abstract class Account
 
 	/**
 	 * Abstract method for playing a Media instance
+	 * @param media A Media instance
+	 * @return A String indicating the status of playing the media
 	 * @since 0.2
 	 */
 
