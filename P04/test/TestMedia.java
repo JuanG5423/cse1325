@@ -7,9 +7,9 @@ public class TestMedia
 	{
 		//TEST VECTOR #1: Verify that the toString() returns the title followed by the URL in parentheses
 		Media media = new Media("The Little Shop of Horrors", "https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0", 7);
-		if (!(media.toString().equals("The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0)")))
+		if (!(media.toString().equals("The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0) 7")))
 		{
-			System.err.println("FAIL: expected output is \"The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0)\" but returned " + media.toString());
+			System.err.println("FAIL: expected output is \"The Little Shop of Horrors (https://publicdomainmovie.net/movie/the-little-shop-of-horrors-0) 7\" but returned " + media.toString());
 			System.exit(69);
 		}
 
