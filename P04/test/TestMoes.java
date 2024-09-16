@@ -53,6 +53,12 @@ public class TestMoes
 			errors++;
 		}
 
+		//TEST VECTOR #6: getPoints for Unlimited account
+		if (Integer.MAX_VALUE != moes.getPoints(0))
+		{
+			System.err.println("FAIL: Unlimited account should have Integer.MAX_VALUE (2147483647) points but has " + moes.getPoints(0) + " points");
+			errors++;
+		}
 
 		System.exit(errors);
 	}
