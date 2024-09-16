@@ -20,11 +20,18 @@ public class TestAlacarte
 
 		//TEST VECTOR #2: Alacarte.play() when media can be afforded
 		Media media = new Media("Short title", "https://en.wikipedia.org/wiki/Bidi_Bidi_Bom_Bom", 20);
+		currentPoints = 20;
 		String playMedia = account.play(media);
 		if (!(playMedia.equals("Playing Short title (https://en.wikipedia.org/wiki/Bidi_Bidi_Bom_Bom, 20 points)")))
 		{
 			System.err.println("FAIL: Expected output of Playing Short title (https://en.wikipedia.org/wiki/Bidi_Bidi_Bom_Bom, 20 points) but received " + playMedia);
-		       errors++;	
+		       	errors++;	
+		}
+		//TEST VECTOR #3: Points after using Alacarte.play()
+		if (20-20 != account.getPointsRemaining())
+		{
+			System.err.println("FAIL 20-20=0 but points remaining after playing media worth 20 points on an account with 20 points is " + account.getPointsRemaining());
+			errors++;
 		}
 
 	}
