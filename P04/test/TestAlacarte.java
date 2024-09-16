@@ -34,6 +34,14 @@ public class TestAlacarte
 			errors++;
 		}
 
+		//TEST VECTOR #4: Alacarte.play() when not enough points
+		playMedia = account.play(media);
+		if (!(playMedia.equals("Buy more points: Requires 20 points, you have 0")))
+		{
+			System.err.println("FAIL: Expected output of Buy more points: Requires 20 points, you have 0 when trying to play media worth 20 points with an account with 0 points but received " + playMedia);
+			errors++;
+		}
+		System.exit(errors);
 	}
 }
 
