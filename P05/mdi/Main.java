@@ -11,6 +11,24 @@ public class Main
 	private Menu menu;
 	private boolean running;
 
+	public Main()
+	{
+		this.moes = moes;
+		this.output = output;
+		this.menu = menu;
+		this.running = running;
+
+		menu.addMenuItem(new MenuItem("Exit", () -> endApp()));
+		menu.addMenuItem(new MenuItem("Play media", () -> playMedia()));
+	       	menu.addMenuItem(new MenuItem("List media", () -> listMedia()));
+		menu.addMenuItem(new MenuItem("List available points", () -> listAvailablePoints()));
+		menu.addMenuItem(new MenuItem("Buy points", () -> buyPoints()));
+		menu.addMenuItem(new MenuItem("Add media", () -> addMedia()));
+		menu.addMenuItem(new MenuItem("List all students", () -> listStudents()));
+		menu.addMenuItem(new MenuItem("Add a student", () -> addStudent()));
+	}
+
+
 	private void addStudent()
 	{
 		Scanner in = new Scanner(System.in);
