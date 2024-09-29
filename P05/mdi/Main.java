@@ -116,6 +116,28 @@ public class Main
 		}
 	}
 
+	private void mdi()
+	{
+		while (running)
+		{
+			Scanner in = new Scanner(System.in);
+			System.out.print("Enter the number corresponding to the desired command: ");
+			int command = in.nextInt();
+			menu.run(command);
+		}
+	}
+
+	private void endApp()
+	{
+		running = false;
+	}
+
+	public static void main(String args[])
+	{
+		Main main = new Main();
+		main.mdi();
+	}
+
 
 
 
