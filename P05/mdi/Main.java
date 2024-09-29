@@ -68,6 +68,36 @@ public class Main
 		System.out.println(playMedia(studentIndex, mediaIndex));
 	}
 
+	private void listAvailablePoints()
+	{
+		Scanner in = new Scanner(System.in);
+
+                System.out.print("Here is a list of the students and their corresponding numbers:\n" + getStudentList() + "\nEnter the number for the student whose points balance you wish to see: ");
+                int studentIndex = in.nextInt();
+		getPoints(studentIndex);
+	}
+
+	private void buyPoints()
+	{
+		Scanner in = new Scanner(System.in);
+
+                System.out.print("Here is a list of the students and their corresponding numbers:\n" + getStudentList() + "\nEnter the number for the student that is buying points: ");
+                int studentIndex = in.nextInt();
+		int currentPoints = getPoints(studentIndex);
+
+		System.out.print("How many points do you want to buy? ");
+		int newPoints = in.nextInt();
+
+		if (newPoints <= 0)
+		{
+			throw new IllegalArgumentException("Cannot buy a non-positive number of points");
+		}
+		else
+		{
+			System.out.println(buyPoints(studentIndex, newPoints);
+		}
+	}
+
 
 
 
