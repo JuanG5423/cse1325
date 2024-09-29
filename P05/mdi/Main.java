@@ -13,10 +13,10 @@ public class Main
 
 	public Main()
 	{
-		this.moes = moes;
+		this.moes = new Moes();
 		this.output = output;
-		this.menu = menu;
-		this.running = running;
+		this.menu = new Menu();
+		this.running = true;
 
 		menu.addMenuItem(new MenuItem("Exit", () -> endApp()));
 		menu.addMenuItem(new MenuItem("Play media", () -> playMedia()));
