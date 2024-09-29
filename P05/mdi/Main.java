@@ -50,6 +50,25 @@ public class Main
 		addMedia(new Media(title, url, points));
 	}
 
+	private void listMedia()
+	{
+		System.out.println(getMediaList());
+	}
+
+	private void playMedia()
+	{
+		Scanner in = new Scanner(System.in);
+
+		System.out.print("Here is a list of the students and their corresponding numbers:\n" + getStudentList() + "\nEnter the number for the student for which you wish to play media: ");
+		int studentIndex = in.nextInt();
+
+		System.out.print("Here is a list of the available media along with their numbers:\n" + getMediaList() + "\nEnter the number for the media you wish to play");
+		int mediaIndex = in.nextInt();
+
+		System.out.println(playMedia(studentIndex, mediaIndex));
+	}
+
+
 
 
 }
