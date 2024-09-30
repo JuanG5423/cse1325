@@ -33,7 +33,7 @@ public class Main
 	{
 		Scanner in = new Scanner(System.in);
 		
-		System.out.print("Enter the student's name: ");
+		System.out.print("\nEnter the student's name: ");
 		String name = in.nextLine();
 		
 		System.out.print("\nEnter the student's ID number: ");
@@ -43,7 +43,7 @@ public class Main
 		System.out.print("\nEnter the student's @mavs.uta.edu or @uta.edu email address: ");
 		String email = in.nextLine();
 		
-		System.out.print("\nEnter a for an Alacarte account or u for an Unlimited account");
+		System.out.print("\nEnter a for an Alacarte account or u for an Unlimited account: ");
 		boolean isUnlimited = in.nextLine().equals("u");
 		moes.addStudent(new Student(name, id, email, isUnlimited));
 	}
@@ -57,7 +57,7 @@ public class Main
 	{
 		Scanner in = new Scanner(System.in);
 		
-		System.out.print("Enter the title of the media: ");
+		System.out.print("\nEnter the title of the media: ");
 		String title = in.nextLine();
 
 		System.out.print("\nEnter its URL: ");
@@ -78,10 +78,10 @@ public class Main
 	{
 		Scanner in = new Scanner(System.in);
 
-		System.out.print("Here is a list of the students and their corresponding numbers:\n" + moes.getStudentList() + "\nEnter the number for the student for which you wish to play media: ");
+		System.out.print("\nHere is a list of the students and their corresponding numbers:\n" + moes.getStudentList() + "\nEnter the number for the student for which you wish to play media: ");
 		int studentIndex = in.nextInt();
 
-		System.out.print("Here is a list of the available media along with their numbers:\n" + moes.getMediaList() + "\nEnter the number for the media you wish to play");
+		System.out.print("\nHere is a list of the available media along with their numbers:\n" + moes.getMediaList() + "\nEnter the number for the media you wish to play");
 		int mediaIndex = in.nextInt();
 
 		System.out.println(moes.playMedia(studentIndex, mediaIndex));
@@ -91,7 +91,7 @@ public class Main
 	{
 		Scanner in = new Scanner(System.in);
 
-                System.out.print("Here is a list of the students and their corresponding numbers:\n" + moes.getStudentList() + "\nEnter the number for the student whose points balance you wish to see: ");
+                System.out.print("\nHere is a list of the students and their corresponding numbers:\n" + moes.getStudentList() + "\nEnter the number for the student whose points balance you wish to see: ");
                 int studentIndex = in.nextInt();
 		System.out.println(moes.getPoints(studentIndex));
 	}
@@ -100,11 +100,11 @@ public class Main
 	{
 		Scanner in = new Scanner(System.in);
 
-                System.out.print("Here is a list of the students and their corresponding numbers:\n" + moes.getStudentList() + "\nEnter the number for the student that is buying points: ");
+                System.out.print("\nHere is a list of the students and their corresponding numbers:\n" + moes.getStudentList() + "\nEnter the number for the student that is buying points: ");
                 int studentIndex = in.nextInt();
 		int currentPoints = moes.getPoints(studentIndex);
 
-		System.out.print("How many points do you want to buy? ");
+		System.out.print("\nHow many points do you want to buy? ");
 		int newPoints = in.nextInt();
 
 		if (newPoints <= 0)
@@ -122,7 +122,7 @@ public class Main
 		while (running)
 		{
 			Scanner in = new Scanner(System.in);
-			System.out.println(menu.toString());
+			System.out.println("\n" + menu.toString());
 			System.out.print("Enter the number corresponding to the desired command: ");
 			int command = in.nextInt();
 			menu.run(command);
