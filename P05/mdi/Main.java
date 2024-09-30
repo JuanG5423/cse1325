@@ -38,6 +38,7 @@ public class Main
 		
 		System.out.print("\nEnter the student's ID number: ");
 		int id = in.nextInt();
+		in.nextLine();
 		
 		System.out.print("\nEnter the student's @mavs.uta.edu or @uta.edu email address: ");
 		String email = in.nextLine();
@@ -121,6 +122,7 @@ public class Main
 		while (running)
 		{
 			Scanner in = new Scanner(System.in);
+			System.out.println(menu.toString());
 			System.out.print("Enter the number corresponding to the desired command: ");
 			int command = in.nextInt();
 			menu.run(command);
