@@ -20,9 +20,11 @@ public class Main
 	private static final String fileVersion = "0.4";
 	private String filename;
 
-	private void open() throws IOException
+	private void open() 
 	{
-		System.out.print("Current filename: " + filename + ".\nEnter new filename: ");
+		System.out.print("Current filename " + filename + "Enter new filename: ");
+		Scanner in = new Scanner(System.in);
+		filename = in.nextLine();
 		if (filename.equals("\n"))
 		{
 			return;
@@ -67,7 +69,7 @@ public class Main
 
 
 
-	private void saveAs() throws IOException
+	private void saveAs()
 	{
 		System.out.print("Current filename: " + filename + ".\nEnter new filename: ");
 		Scanner in = new Scanner(System.in);
@@ -91,7 +93,7 @@ public class Main
 		moes = new Moes();
 	}
 
-	private void save() throws IOException
+	private void save() 
 	{
 		try
 		{
@@ -123,6 +125,9 @@ public class Main
 		menu.addMenuItem(new MenuItem("Add media", () -> addMedia()));
 		menu.addMenuItem(new MenuItem("List all students", () -> listStudents()));
 		menu.addMenuItem(new MenuItem("Add a student", () -> addStudent()));
+		menu.addMenuItem(new MenuItem("Open file", () -> open()));
+		menu.addMenuItem(new MenuItem("Save", () -> save()));
+		menu.addMenuItem(new MenuItem("Save as", () -> saveAs()));
 	}
 
 
