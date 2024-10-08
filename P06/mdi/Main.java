@@ -19,6 +19,25 @@ public class Main
 	private static final String fileVersion = "0.4";
 	private String filename;
 
+	private void saveAs() throws IOException
+	{
+		System.out.print("Current filename: " + filename + ".\nEnter new filename: ");
+		Scanner in = new Scanner(System.in);
+		filename  = in.nextLine();
+		if (filename.equals("\n"))
+		{
+			return;
+		}
+		else
+		{
+			if (!(filename.contains(".moes")))
+			{
+				filename += ".moes";
+			}
+			this.save();
+		}
+	}
+
 	private void newMoes()
 	{
 		moes = new Moes();
