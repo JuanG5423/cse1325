@@ -5,6 +5,9 @@ import customer.Student;
 import customer.Account;
 import customer.Unlimited;
 import customer.Alacarte;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 
 /**
  * Maverick Online Entertainment System, a class for managing students and media
@@ -17,6 +20,36 @@ public class Moes
 {
 	private ArrayList<Media> library = new ArrayList<Media>();
 	private ArrayList<Student> customers = new ArrayList<Student>();
+
+	public void save(BufferedWriter bw) throws IOException
+	{
+		bw.write("" + library.size() + "\n" + customers.size());
+		for (Media media : library)
+		{
+			media.save(bw);
+		}
+		for (Student student : customers)
+		{
+			student.save(bw);
+		}
+	}
+
+	public Moes(BufferedReader br) throws IOException
+	{
+		int librarySize = Integer.parseInt(br.readLine());
+		int customersSize = Integer.parseInt(br.readLine());
+
+		for (int i = 0; i < librarySize; i++)
+		{
+			library.add(new Media(br));
+		}
+		for (int j = 0; j < customersSize; j++)
+		{
+			customers.add(new Student(br));
+		}
+	}
+
+
 
 	/**
 	 * Adds a piece of media to the library
