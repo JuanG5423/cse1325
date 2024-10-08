@@ -1,4 +1,7 @@
 package customer;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import product.Media;
 
 /**
@@ -18,16 +21,16 @@ public class Alacarte extends Account
 		super();
 	}
 
-	public Alacarte(BufferedReader br)
+	public Alacarte(BufferedReader br) throws IOException
 	{
 		super(br);
 		pointsRemaining = Integer.parseInt(br.readLine());
 	}
 
-	public void save(BufferedWriter bw)
+	public void save(BufferedWriter bw) throws IOException
 	{
 		super.save(bw);
-		bw.write(pointsRemaining, true);
+		bw.write(pointsRemaining);
 	}
 
 	/**

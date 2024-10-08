@@ -1,4 +1,7 @@
 package customer;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import product.Media;
 
 
@@ -16,6 +19,28 @@ public class Student
 	private int id;
 	private String email;
 	private Account account;
+
+	public void save(BufferedWriter bw) throws IOException
+	{
+		bw.write(this.name + "\n" + this.id + "\n" + this.email + "\n" + account.getClass().getName());
+	}
+
+	public Student(BufferedReader br) throws IOException
+	{
+		this.name = br.readLine();
+		this.id = Integer.parseInt(br.readLine());
+		this.email = br.readLine();
+		String type = br.readLine();
+
+		if (type.equals("Unlimited"))
+		{
+			this.account = new Unlimited(br);
+		}
+		else
+		{
+			this.account = new Alacarte(br);
+		}
+	}
 
 	/**
 	 * Creates a Student instance after ensuring they use a valid email address
