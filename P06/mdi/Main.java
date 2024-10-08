@@ -3,6 +3,10 @@ import moes.Moes;
 import product.Media;
 import customer.Student;
 import java.util.Scanner;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public class Main
 {
@@ -10,6 +14,32 @@ public class Main
 	private String output;
 	private Menu menu;
 	private boolean running;
+	private static final String extension = ".moes";
+	private static final String magicCookie = "bababui";
+	private static final String fileVersion = "0.4";
+	private String filename;
+
+	private void newMoes()
+	{
+		moes = new Moes();
+	}
+
+	private void save() throws IOException
+	{
+		try
+		{
+			BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
+			bw.write(magicCookie + "\n" + fileVersion);
+			moes.save(bw);
+			return;
+		}
+		catch (Exception e)
+		{
+			System.err.println("File " + filename + " could not be opened");
+			System.err.println(e.getMessage());
+			return;
+		}
+	}
 
 	public Main()
 	{

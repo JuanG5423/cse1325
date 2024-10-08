@@ -34,6 +34,10 @@ public class Moes
 		}
 	}
 
+	public Moes()
+	{
+	}
+
 	public Moes(BufferedReader br) throws IOException
 	{
 		int librarySize = Integer.parseInt(br.readLine());
