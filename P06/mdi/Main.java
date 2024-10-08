@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.FileReader;
 
 public class Main
 {
@@ -18,6 +19,53 @@ public class Main
 	private static final String magicCookie = "bababui";
 	private static final String fileVersion = "0.4";
 	private String filename;
+
+	private void open() throws IOException
+	{
+		System.out.print("Current filename: " + filename + ".\nEnter new filename: ");
+		if (filename.equals("\n"))
+		{
+			return;
+		}
+		else
+		{
+			if (!(filename.contains(".moes")))
+                        {
+                                filename += ".moes";
+                        }
+			try
+			{
+				BufferedReader br = new BufferedReader(new FileReader(filename));
+
+				if (!(br.readLine().equals(magicCookie)))
+				{
+					throw new IOException("First line of file is not magicCookie " + magicCookie);
+				}
+				if (!(br.readLine().equals(fileVersion)))
+				{
+					throw new IOException("Second line of file is not fileVersion " + fileVersion);
+				}
+				try
+				{
+					moes = new Moes(br);
+				}
+				catch (Exception e)
+				{
+					System.err.println("Could not reconstruct moes");
+					System.err.println(e.getMessage());
+					return;
+				}
+			}
+			catch (Exception e)
+			{
+				System.err.println("Could not open file " + filename);
+				System.err.println(e.getMessage());
+				return;
+			}
+		}
+	}
+
+
 
 	private void saveAs() throws IOException
 	{
