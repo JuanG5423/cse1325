@@ -171,11 +171,12 @@ sys     0m6.284s
 
 QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
 
-
+In this case, adding threads consistently sped up the program until we used 7 threads. Using 6 threads, the program took 13.919 seconds to run, but the pattern started to fluctuate at this point. Using 7 threads, the program took 14.456 seconds, slowing down the program. However, 8 threads was negligibly faster than 6 threads at 13.668 seconds. The fastest the program ran
+was 13.639 seconds when using 10 threads. Using 16 threads took noticeably longer at 16.879 seconds.
 
 QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
 
-Yes, from 0.285 seconds to 1.667 seconds for this data set
+The "system load" increases as we add more threads. In this example, the user and sys times increased from 48.469 seconds and 1.169 seconds to 3 minutes with 48.560 seconds and 6.284 seconds, respectively.
 
 
 
