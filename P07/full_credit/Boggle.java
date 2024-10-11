@@ -16,8 +16,8 @@ public class Boggle {
     private static List<String> words = new ArrayList<>();
     private static Set<Solution> solutions = new TreeSet<>();
 
-    private static int numberOfBoards = 1; // default
-    private static int boardSize = 50;     // default is to use 50x50 Boggle boards
+    private static int numberOfBoards = 77; // default
+    private static int boardSize = 77;     // default is to use 50x50 Boggle boards
     private static int numThreads = 1;     // default is to use a single thread
     private static String filename = "words.txt"; // default (this is the supplied file of 971 common words)
     private static int verbosity = 0;   // smaller ints mean less output - us 0 for timing
