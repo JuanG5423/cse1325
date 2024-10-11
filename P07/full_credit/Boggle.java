@@ -95,13 +95,21 @@ public class Boggle {
             // =========== CHANGE THIS BLOCK OF CODE TO ADD THREADING ===========
             // Find words on the Boggle boards, collecting the solutions in a TreeSet
             int threadNumber = 0; // This will be set to a unique int for each of your threads
-            for(Board board : boards) {
-                Solver solver = new Solver(board, threadNumber, verbosity);
-                for(String word : words) {
-                    Solution solution = solver.solve(word);
-                    if(solution != null) solutions.add(solution);
-                }
-            }
+	    ArrayList<Thread> threads = new ArrayList<>();
+	    
+	    for (int i = 0; i < numThreads-1; i++) {
+		    final int start = numberOfBoards/numThreads * i;
+		    final int end = numberOfBoards/numThreads * (i+1);
+		    final int count = i;
+		    Thread thread = new Thread(() -> solveRange(start, end, count));
+		    thread.start();
+		    threads.add(thread);
+	    }
+	   for (Thread thread : threads) {
+		    thread.join();
+	   }
+
+
             // =========== END BLOCK OF CODE TO ADD THREADING ===========
 
             // Print all the solutions if requested
