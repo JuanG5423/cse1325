@@ -1,5 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.BufferedReader; import java.io.FileReader;
 import java.io.IOException;
 
 import java.util.List;
@@ -35,7 +34,7 @@ public class Boggle {
 
 		    for (String word : words) {
 			    Solution solution = solver.solve(word);
-			    if (solution) {
+			    if (solution != null) {
 				    synchronized (solutions) {
 					    solutions.add(solution);
 				    }
@@ -97,9 +96,15 @@ public class Boggle {
             int threadNumber = 0; // This will be set to a unique int for each of your threads
 	    ArrayList<Thread> threads = new ArrayList<>();
 	    
-	    for (int i = 0; i < numThreads-1; i++) {
+	    for (int i = 0; i < numThreads; i++) {
 		    final int start = numberOfBoards/numThreads * i;
-		    final int end = numberOfBoards/numThreads * (i+1);
+		    final int end;
+		    if (i == numThreads-1) {
+			    end = numberOfBoards;
+		    }
+		    else {
+			    end = numberOfBoards/numThreads * (i+1);
+		    }
 		    final int count = i;
 		    Thread thread = new Thread(() -> solveRange(start, end, count));
 		    thread.start();
