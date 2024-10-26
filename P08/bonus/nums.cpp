@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	{
 		std::cout << number << std::endl;
 	}
-	std::cout << std::endl << "Words:" << std::endl
+	std::cout << std::endl << "Words:" << std::endl;
 	for (std::string word : *words)
 	{
 		std::cout << word << std::endl;
