@@ -19,7 +19,15 @@ int main(int argc, char **argv)
 		}
 	}
 
-	std::cout << "Numbers: " << std::endl;
-	
+	std::cout << "Numbers:" << std::endl;
+	for (std::string number : numbers)
+	{
+		std::cout << number << std::endl;
+	}
+	std::cout << std::endl << "Words:" << std::endl
+	for (std::string word : *words)
+	{
+		std::cout << word << std::endl;
+	}	
 }	
 
