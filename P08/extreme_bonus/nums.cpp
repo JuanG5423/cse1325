@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	}
 
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	shuffle (numbers.begin(), numbers.end(), std::default_random_engine(seed));
 
 	std::cout << "Numbers:" << std::endl;
 	for (std::string number : numbers)
