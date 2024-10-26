@@ -27,4 +27,4 @@ replay_pid*
 */docs/
 
 #c++ executables
-#*.out
+*.out
