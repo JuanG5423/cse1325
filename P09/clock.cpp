@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 class Clock
 {
@@ -12,15 +13,15 @@ class Clock
 		{
 			if (hours < 0 || hours > 23)
 			{
-				throw std::out_of_range{"Invalid value of " + hours + " for hours"};
+				throw std::out_of_range{"Invalid value of " + std::to_string(hours) + " for hours"};
 			}
 			if (minutes < 0 || minutes > 59)
 			{
-				throw std::out_of_range{"Invalid value of " + minutes + " for minutes"};
+				throw std::out_of_range{"Invalid value of " + std::to_string(minutes) + " for minutes"};
 			}
 			if (seconds < 0 || seconds > 59)
 			{
-				throw std::out_of_range{"Invalid value of " + seconds + " for seconds"};
+				throw std::out_of_range{"Invalid value of " + std::to_string(seconds) + " for seconds"};
 			}
 		}
 
