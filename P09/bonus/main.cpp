@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	}
 	try
 	{
-		Clock clock{atoi(argv[1]), atoi(argv[2]), atoi(argv[3])};
+		Timer timer{atoi(argv[1]), atoi(argv[2]), atoi(argv[3])};
 
 		std::cout << std::endl << "Enter 'q' to quit." << std::endl << std::endl;
 		std::string input = "";
@@ -22,9 +22,8 @@ int main(int argc, char **argv)
 		}
 		while (input != "q");
 	}
-	catch (std::out_of_range& e)
+	catch (std::runtime_error& e)
 	{
 		std::cerr << e.what() << std::endl;
-		exit(-2);
 	}
 }			
