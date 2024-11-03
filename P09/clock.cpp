@@ -3,7 +3,7 @@
 class Clock
 {
 	public:
-		Clock(int hours, int minutes, int seconds) : __hours{hours}, __minutes{minutes}, __seconds{seconds}
+		Clock(int hours, int minutes, int seconds) : _hours{hours}, _minutes{minutes}, _seconds{seconds}
 		{
 			if (hours < 0 || hours > 23)
 			{
@@ -25,25 +25,25 @@ class Clock
 
 		void print()
 		{
-			std::cout << std::setw(2) << __hours << ":" << std::setw(2) << __minutes << ":" << std::setw(2) << __seconds << std::endl;
+			std::cout << std::setw(2) << _hours << ":" << std::setw(2) << _minutes << ":" << std::setw(2) << _seconds << std::endl;
 		}
 
 		void tic()
 		{
-			__seconds++;
-			if (__seconds >= 60)
+			_seconds++;
+			if (_seconds >= 60)
 			{
-				__seconds -= 60;
-				__minutes++;
+				_seconds -= 60;
+				_minutes++;
 			}
-			if (__minutes >= 60)
+			if (_minutes >= 60)
 			{
-				__minutes -=60;
-				__hours++;
+				_minutes -=60;
+				_hours++;
 			}
-			if (__hours >= 24)
+			if (_hours >= 24)
 			{
-				__hours -= 24;
+				_hours -= 24;
 			}
 		}
 }
