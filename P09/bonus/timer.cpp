@@ -9,7 +9,7 @@ Timer::~Timer()
 {
 }
 
-void Timer::tic()
+void Timer::tic() 
 {
 	_seconds--;
 	if (_seconds < 0)

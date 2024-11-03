@@ -1,11 +1,11 @@
 #include <iostream>
-#include "clock.h"
+#include "timer.h"
 
 int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "usage: clock <hour> <minutes> <seconds>" << std::endl;
+		std::cout << "usage: timer <hour> <minutes> <seconds>" << std::endl;
 		exit(-1);
 	}
 	try
@@ -16,8 +16,8 @@ int main(int argc, char **argv)
 		std::string input = "";
 		do
 		{
-			clock.print();
-			clock.tic();
+			timer.print();
+			timer.tic();
 			std::getline(std::cin, input);
 		}
 		while (input != "q");
