@@ -24,6 +24,6 @@ void Timer::tic()
 	}
 	if (!_hours && !_minutes && !_seconds)
 	{
-		throw std::runtime_error{"\nTimer expired"};
+		throw Timer_expired();
 	}
 }
