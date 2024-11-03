@@ -25,5 +25,26 @@ class Clock
 
 		void print()
 		{
+			std::cout << std::setw(2) << __hours << ":" << std::setw(2) << __minutes << ":" << std::setw(2) << __seconds << std::endl;
+		}
 
+		void tic()
+		{
+			__seconds++;
+			if (__seconds >= 60)
+			{
+				__seconds -= 60;
+				__minutes++;
+			}
+			if (__minutes >= 60)
+			{
+				__minutes -=60;
+				__hours++;
+			}
+			if (__hours >= 24)
+			{
+				__hours -= 24;
+			}
+		}
+}
 		
