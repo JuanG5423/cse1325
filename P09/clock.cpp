@@ -25,7 +25,7 @@ class Clock
 
 		void print()
 		{
-			std::cout << std::setw(2) << _hours << ":" << std::setw(2) << _minutes << ":" << std::setw(2) << _seconds << std::endl;
+			std::cout << "The time is now " << std::setw(2) << _hours << ":" << std::setw(2) << _minutes << ":" << std::setw(2) << _seconds << std::endl;
 		}
 
 		void tic()
