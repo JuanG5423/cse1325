@@ -2,6 +2,11 @@
 
 class Clock
 {
+	protected:
+		int _hours;
+		int _minutes;
+		int _seconds;
+
 	public:
 		Clock(int hours, int minutes, int seconds) : _hours{hours}, _minutes{minutes}, _seconds{seconds}
 		{
@@ -46,5 +51,5 @@ class Clock
 				_hours -= 24;
 			}
 		}
-}
+};
 		
