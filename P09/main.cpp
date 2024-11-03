@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 	}
 	try
 	{
-		Clock clock = Clock{atoi(argv[1]), atoi(argv[2]), atoi(argv[3])};
+		Clock clock{atoi(argv[1]), atoi(argv[2]), atoi(argv[3])};
 
 		std::cout << std::endl << "Enter 'q' to quit." << std::endl;
 		std::string input = "";
