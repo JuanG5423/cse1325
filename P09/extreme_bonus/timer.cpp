@@ -1,4 +1,5 @@
 #include "timer.h"
+#include "timer_expired.h"
 #include <iostream>
 
 Timer::Timer(int hours, int minutes, int seconds) : Clock{hours, minutes, seconds}
