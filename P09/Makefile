@@ -1,4 +1,4 @@
-CXXFLAGS += --std=c++21
+CXXFLAGS += --std=c++2a
 main: main.o clock.o *.h
 	$(CXX) $(CXXFLAGS) main.o clock.o -o clock
 main.o: main.cpp *.h

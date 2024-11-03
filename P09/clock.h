@@ -1,6 +1,6 @@
 #ifndef __CLOCK_H
 #include <iostream>
-#define __COMPLEX_H
+#define __CLOCK_H
 
 class Clock
 {
