@@ -24,6 +24,16 @@ Purse Purse::operator++(int)
 	return purse;
 }
 
+Purse Purse::operator+(const Purse& purse)
+{
+	return Purse{_pounds + purse._pounds, _shillings + purse._shillings, _pence + purse._pence};
+}
+
+Purse Purse::operator-(const Purse& purse)
+{
+	return Purse{_pounds - purse._pounds, _shillings - purse._shillings, _pence - purse._pence};
+}
+
 void Purse::rationalize()
 {
 	while (_pence >= 12)
