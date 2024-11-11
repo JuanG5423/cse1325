@@ -192,7 +192,6 @@ int main(int argc, char* argv[]) {
         }
     }
     vector <<= 1;
- /* 
     // ========================================================================
     // Compound Addition and Subtraction
     if(verbose) std::cout << "#### Testing Compound Addition and Subtraction\n\n";
@@ -223,4 +222,4 @@ int main(int argc, char* argv[]) {
     if(result != 0) 
         std::cerr << "FAIL: Error code " << result << std::endl;
     return result;
-*/}
+}
