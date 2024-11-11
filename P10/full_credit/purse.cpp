@@ -39,6 +39,7 @@ Purse& Purse::operator+=(const Purse& purse)
 	_pounds += purse._pounds;
 	_shillings += purse._shillings;
 	_pence += purse._pence;
+	rationalize();
 	return *this;
 }
 
@@ -47,6 +48,7 @@ Purse& Purse::operator-=(const Purse& purse)
 	_pounds -= purse._pounds;
 	_shillings -= purse._shillings;
 	_pence -= purse._pence;
+	rationalize();
 	return *this;
 }
 
