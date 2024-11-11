@@ -33,7 +33,7 @@ int main()
 		std::cout << pair.first << " with " << pair.second << std::endl;
 		total += pair.second;
 	}
-	std::cout << "Total in bak is " << total << std::endl;
+	std::cout << std::endl << "Total in bank is " << total << std::endl;
 
 
 }
