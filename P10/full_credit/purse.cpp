@@ -36,14 +36,30 @@ Purse Purse::operator-(const Purse& purse)
 
 void Purse::rationalize()
 {
-	while (_pence >= 12)
+	while (_pence >= 12 || _pence < 0)
 	{
-		_pence -= 12;
-		_shillings++;
+		if (_pence >= 12)
+		{
+			_pence -= 12;
+			_shillings++;
+		}
+		if (_pence < 0)
+		{
+			_pence += 12;
+			_shillings--;
+		}
 	}
-	while (_shillings >= 20)
-	{
-		_shillings -= 20;
-		_pounds++;
-	}
+	while (_shillings >= 20 || _shillings < 0)
+	{	
+		if (_shillings >= 20)
+		{
+			_shillings -= 20;
+			_pounds++;
+		}
+		if (_shillings < 0)
+		{
+			_shillings += 20;
+			_pounds--;
+		}
+	}	
 }
