@@ -21,6 +21,19 @@ Purse Purse::operator++(int)
 {
 	Purse purse{*this};
 	++*this;
-	return purse++;
+	return purse;
 }
 
+void Purse::rationalize()
+{
+	while (_pence >= 12)
+	{
+		_pence -= 12;
+		_shillings++;
+	}
+	while (_shillings >= 20)
+	{
+		_shillings -= 20;
+		_pounds++;
+	}
+}

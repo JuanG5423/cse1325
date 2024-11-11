@@ -8,6 +8,7 @@ class Purse
 		int _pounds;
 		int _shillings;
 		int _pence;
+		void rationalize();
 	
 	public:
 		Purse(int pounds=0, int shillings=0, int pence=0);
@@ -19,6 +20,5 @@ class Purse
 		Purse operator-(const Purse& purse);
 		Purse& operator+=(const Purse& purse);
 		Purse& operator-=(const Purse& purse);
-		void rationalize();
 };
 #endif
