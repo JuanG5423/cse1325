@@ -11,14 +11,18 @@ int main()
 	{
 		std::cout << "Name account " << i << ": ";
 		std::string name;
+		std::cin.ignore();
 		std::getline(std::cin, name);
 		int pence;
 		int shillings;
 		int pounds;
 		std::cout << "Enter your initial deposit (pounds shillings pence): ";
+		std::cin >> pounds;
+		std::cin >> shillings;
+		std::cin >> pence;
 		Purse purse{pounds, shillings, pence};
 		vault[name] = purse;
-		std::cout << "Account " << name << " created with " << purse << std::endl;
+		std::cout << "Account " << name << " created with " << purse << std::endl << std::endl;
 	}
 
 	std::cout << std::endl << std::endl << std::endl << "Account List" << std::endl << "============" << std::endl << std::endl;
