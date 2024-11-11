@@ -10,15 +10,15 @@ class Purse
 		int _pence;
 	
 	public:
-		Purse(int pounds, int shillings, int pence);
-		friend std::ostream& operator <<(ostream& ost, const Purse&, purse);
-		auto operator <=>(const Purse& purse);
-		Purse& operator ++();
-		Purse operator ++(int);
-		Purse operator +(const Purse& purse);
-		Purse operator -(const Purse& purse);
-		Purse& operator +=(const Purse& purse);
-		Purse& operator -=(const Purse& purse);
+		Purse(int pounds=0, int shillings=0, int pence=0);
+		friend std::ostream&operator<<(ostream& ost, const Purse&, purse);
+		auto operator<=>(const Purse& purse) const = default;
+		Purse& operator++();
+		Purse operator++(int);
+		Purse operator+(const Purse& purse);
+		Purse operator-(const Purse& purse);
+		Purse& operator+=(const Purse& purse);
+		Purse& operator-=(const Purse& purse);
 		void rationalize();
 };
 #endif
