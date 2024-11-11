@@ -21,4 +21,15 @@ int main()
 		std::cout << "Account " << name << " created with " << purse << std::endl;
 	}
 
+	std::cout << std::endl << std::endl << std::endl << "Account List" << std::endl << "============" << std::endl << std::endl;
+	Purse total{};
+	
+	for (const auto& pair : vault)
+	{
+		std::cout << pair.first << " with " << pair.second << std::endl;
+		total += pair.second;
+	}
+	std::cout << "Total in bak is " << total << std::endl;
+
+
 }
