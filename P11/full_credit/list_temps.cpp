@@ -1,4 +1,5 @@
 #include "date.h"
+#include <iomanip>
 #include <map>
 #include <fstream>
 #include <sstream>
@@ -53,23 +54,24 @@ int main(int argc, char **argv)
 
 		while (std::cin.good())
 		{
-			std::cout << "Starting date to list (year month day): " << std::endl;
+			std::cout << "Starting date to list (year month day): ";
 			int year;
 			int month;
 			int day;
 
 			std::cin >> year >> month >> day;
 			Date start{year, month, day};
-			std::cout << "Ending date to list (year month day): " << std::endl;
+			std::cout << "Ending date to list (year month day): ";
 			std::cin >> year >> month >> day;
 			Date end{year, month, day};	
 			std::map<Date, Temp>::iterator it = temps.begin();
 
+			std::cout << std::fixed << std::setprecision(1);
 			do
 			{
-				if ((*it)->first >= start && (*it)->first <= end)
+				if (it->first >= start && it->first <= end)
 				{
-					std::cout << (*it)->first << (*it)->second << std::endl;
+					std::cout << it->first << "\t" << it->second << std::endl;
 				}
 			}
 			while (++it != temps.end());
