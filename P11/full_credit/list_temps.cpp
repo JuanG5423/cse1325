@@ -50,5 +50,29 @@ int main(int argc, char **argv)
 			Date date{year, month, day};
 			temps[date] = temperature;
 		}
+
+		while (std::cin.good())
+		{
+			std::cout << "Starting date to list (year month day): " << std::endl;
+			int year;
+			int month;
+			int day;
+
+			std::cin >> year >> month >> day;
+			Date start{year, month, day};
+			std::cout << "Ending date to list (year month day): " << std::endl;
+			std::cin >> year >> month >> day;
+			Date end{year, month, day};	
+			std::map<Date, Temp>::iterator it = temps.begin();
+
+			do
+			{
+				if ((*it)->first >= start && (*it)->first <= end)
+				{
+					std::cout << (*it)->first << (*it)->second << std::endl;
+				}
+			}
+			while (++it != temps.end());
+		}
 	}
 }
